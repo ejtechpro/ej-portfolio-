@@ -6,30 +6,34 @@
   overflow: hidden;
   padding: 15px 6%;
   gap: 1.5%;
-  transition: flex-direction 0.3s ease;
+  transition: flex-direction 0.3s ease; /* Animates the change of flex direction */
 }
+
 .content {
   display: flex;
   flex-flow: row nowrap;
-  flex-direction: var(--main-content-reverse);
   justify-content: space-between;
   flex: 1;
   overflow: hidden;
   overflow-y: auto;
   gap: 1.5%;
   background: teal;
-  transition: flex-direction 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Added transitions */
 }
+
 .left_container,
-.right_container {
+.right_container,
+.main_container {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transform and opacity */
+}
+
+.left_container {
   width: 25%;
-  /* flex: 1; */
+  background: red;
   overflow: hidden;
   overflow-y: auto;
 }
-.left_container {
-  background: red;
-}
+
 .main_container {
   width: 47%;
   display: flex;
@@ -38,15 +42,21 @@
   background: yellowgreen;
   overflow: hidden;
 }
+
 .main_container_outlet {
   flex: 1;
   background: green;
   overflow: hidden;
   overflow-y: auto;
 }
+
 .right_container {
+  width: 25%;
   background: black;
+  overflow: hidden;
+  overflow-y: auto;
 }
+
 @media (max-width: 600px) {
   .container {
     padding: 2%;
@@ -62,7 +72,7 @@
     overflow: hidden;
     overflow-y: auto;
   }
-  .main_container{
+  .main_container {
     width: 100%;
   }
 }
