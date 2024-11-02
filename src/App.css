@@ -63,6 +63,7 @@ body {
   background: var(--bg);
   height: 100vh;
   overflow: hidden;
+  overflow-y: hidden;
 }
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-thumb,
