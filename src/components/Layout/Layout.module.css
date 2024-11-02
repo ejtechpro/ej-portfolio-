@@ -1,7 +1,7 @@
 .container {
   display: flex;
-  flex-flow: column;
-  /* flex-direction: var(--main-container-reverse); */
+  flex-flow: column nowrap;
+  flex-direction: var(--main-container-reverse);
   height: 100vh;
   overflow: hidden;
   padding: 15px 6%;
