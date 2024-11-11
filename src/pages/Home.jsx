@@ -5,7 +5,6 @@ const Home = () => {
     <div>Home Page
       <Link to="about">My link</Link>
       <button>button</button>
-      lorem1234
     </div>
   )
 }
