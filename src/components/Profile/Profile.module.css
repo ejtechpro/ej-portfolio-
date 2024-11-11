@@ -1,0 +1,96 @@
+.left_section_1,
+.left_section_2,
+.left_section_3 {
+  display: flex;
+  flex-flow: column;
+  padding: 10px 14px;
+  background: var(--primary);
+}
+.profile_box {
+  padding-bottom: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.profile_box img {
+  padding: 0 25px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 4px;
+  background: rgb(0, 0, 0);
+}
+.profile_info h3,
+.profile_info h4 {
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.stack {
+  padding: 1px 14px 0 14px;
+}
+.stack h4 span{
+  font-variant: small-caps;
+  color: var(--secondary);
+  letter-spacing: 2px;
+}
+.cv_resume_section {
+  padding: 14px 14px 0 14px;
+}
+.cv_resume_section h4 {
+  padding: 1px 0 10px 0;
+}
+.cv_resume {
+  display: flex;
+  align-items: center;
+}
+.cv_resume li {
+  height: 30px;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  list-style: none;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--tertiary-light);
+  padding: 0 10px;
+}
+.cv_resume li:last-child {
+  border-right: none;
+}
+.cv_resume li:hover {
+  color: var(--tertiary-heavy);
+}
+
+.left_section_2 {
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.left_section_2 .skills {
+  overflow: hidden;
+  overflow-y: auto;
+}
+.left_section_2 h3 {
+  padding: 4px 0;
+}
+.left_section_2 h4 {
+  margin: 10px 0 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--secondary);
+}
+.left_section_2 li {
+  margin: 3px;
+  list-style: none;
+}
+.left_section_3{
+  margin-top: 0.5rem;
+}

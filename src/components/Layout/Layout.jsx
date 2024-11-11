@@ -3,6 +3,7 @@ import styles from "./Layout.module.css";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Profile from "../Profile/Profile";
 
 const VALID_DOCKS = ["column", "column-reverse"];
 
@@ -44,37 +45,37 @@ const Layout = () => {
     setDockFooter((d) => ({ ...d, footer: "column" }));
   };
 
-    const getInitialDockOrder = () => {
-      const storedDockOrder = localStorage.getItem("dockOrder");
-      if (storedDockOrder) {
-        try {
-          return JSON.parse(storedDockOrder);
-        } catch (error) {
-          console.error("Error parsing dock order from localStorage:", error);
-        }
+  const getInitialDockOrder = () => {
+    const storedDockOrder = localStorage.getItem("dockOrder");
+    if (storedDockOrder) {
+      try {
+        return JSON.parse(storedDockOrder);
+      } catch (error) {
+        console.error("Error parsing dock order from localStorage:", error);
       }
-      return { left: 1, main: 2, right: 3 }; // Default order
-    };
+    }
+    return { left: 1, main: 2, right: 3 }; // Default order
+  };
 
-    const [dockOrder, setDockOrder] = useState(getInitialDockOrder);
+  const [dockOrder, setDockOrder] = useState(getInitialDockOrder);
 
-    // Update localStorage whenever dockOrder changes
-    useEffect(() => {
-      localStorage.setItem("dockOrder", JSON.stringify(dockOrder));
-    }, [dockOrder]);
+  // Update localStorage whenever dockOrder changes
+  useEffect(() => {
+    localStorage.setItem("dockOrder", JSON.stringify(dockOrder));
+  }, [dockOrder]);
 
-   // Functions to change the layout order dynamically
-   const dockLeftFirst = () => {
-     setDockOrder({ left: 1, main: 2, right: 3 });
-   };
+  // Functions to change the layout order dynamically
+  const dockLeftFirst = () => {
+    setDockOrder({ left: 2, main: 1, right: 3 });
+  };
 
-   const dockMainFirst = () => {
-     setDockOrder({ main: 1, left: 2, right: 3 });
-   };
+  const dockMainFirst = () => {
+    setDockOrder({ left: 1, main: 2, right: 3 });
+  };
 
-   const dockRightFirst = () => {
-     setDockOrder({ right: 1, main: 2, left: 3 });
-   };
+  const dockRightFirst = () => {
+    setDockOrder({ left: 1, main: 3, right: 2 });
+  };
 
   return (
     <div ref={dockContainer} className={styles.container}>
@@ -83,18 +84,18 @@ const Layout = () => {
           className={styles.left_container}
           style={{ order: dockOrder.left }}
         >
-          L Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
-          ratione amet neque! lorem1234
+          <Profile/>
         </div>
         <div
           className={styles.main_container}
           style={{ order: dockOrder.main }}
         >
           <div className={styles.main_container_header}>
-            <Header />
-            <button onClick={dockLeftFirst}>Dock Left First</button>
-            <button onClick={dockMainFirst}>Dock Main First</button>
-            <button onClick={dockRightFirst}>Dock Right First</button>
+            <Header
+              dockLeftFirst={dockLeftFirst}
+              dockMainFirst={dockMainFirst}
+              dockRightFirst={dockRightFirst}
+            />
           </div>
           <div className={styles.main_container_outlet}>
             <Outlet />

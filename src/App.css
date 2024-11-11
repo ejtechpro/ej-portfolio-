@@ -7,15 +7,15 @@
   --bg: rgb(240, 242, 245);
   --links: rgb(245, 245, 245);
   --primary: rgb(255, 255, 255);
-  --secondary: rgba(255, 255, 255, 0.588);
+  --secondary: rgb(0, 128, 128);
   --scroll-thumb: rgb(136, 136, 136);
   --icon: rgba(0, 0, 0, 0.5);
   --border: rgba(8, 8, 8, 0.192);
   --hr: rgba(158, 140, 140, 0.233);
   --hover: rgba(0, 0, 0, 0.1);
   --shadow: rgba(0, 0, 0, 0.034);
-  --tertiary-light: rgb(89, 149, 253);
-  --tertiary-heavy: rgb(0, 86, 179);
+  --tertiary-light: rgb(100, 108, 255);
+  --tertiary-heavy: rgb(83, 91, 242);
   --btn-color: rgb(255, 255, 255);
   transition: background-color 0.3s ease;
 }
@@ -48,7 +48,7 @@ body.dark {
   --hr: rgba(158, 140, 140, 0.384);
   --hover: rgba(255, 255, 255, 0.1);
   --shadow: rgba(0, 0, 0, 0.096);
-  --tertiary-light: rgb(89, 149, 253);
+  --tertiary-light: #646cff;
   --tertiary-heavy: rgb(0, 86, 179);
   --btn-color: rgb(255, 255, 255);
   transition: background-color 0.3s ease;
@@ -61,6 +61,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color-scheme: light dark;
   background: var(--bg);
+  font-size: clamp(13px, 1rem, 15px);
   height: 100vh;
   overflow: hidden;
   overflow-y: hidden;
@@ -68,12 +69,21 @@ body {
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-track {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   background: transparent;
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--scroll-thumb);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  opacity: 0.7;
 }
 a {
   font-weight: 500;
@@ -84,12 +94,11 @@ a:hover {
   color: #535bf2;
 }
 button {
-  border-radius: 8px;
+  border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -102,7 +111,7 @@ button:focus-visible {
 }
 
 @media (max-width: 600px) {
-  body{
+  body {
     overflow-y: auto;
   }
 }

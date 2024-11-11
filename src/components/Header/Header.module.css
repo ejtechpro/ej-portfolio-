@@ -1,0 +1,31 @@
+.header{
+  display: flex;
+  align-items: flex-start;
+}
+.header li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  height: 35px;
+  flex-basis: 25%;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 500;
+  font-variant: small-caps;
+}
+.header li:last-child{
+  border-right: none;
+  border-bottom: none;
+  background: var(--tertiary-light);
+  color: #fff;
+}
+.header li:hover{
+  color: var(--tertiary-light);
+}
+.header li:last-child:hover{
+  background: var(--tertiary-heavy);
+  color: #fff;
+}
