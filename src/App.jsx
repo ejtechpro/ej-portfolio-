@@ -8,7 +8,7 @@ import Services from "./pages/Services/Services";
 function App() {
   return (
     <Routes>
-      <Route path="ej-portfolio" element={<Layout />}>
+      <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
