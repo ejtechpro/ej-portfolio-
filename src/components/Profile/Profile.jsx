@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./Profile.module.css";
+import profile from "../../assets/profile.png"
 
 const Profile = () => {
   return (
     <>
       <div className={styles.left_section_1}>
         <div className={styles.profile_box}>
-          <img src="profile.png" alt="Profile" />
+          <img src={profile} alt="Profile" />
           <div className={styles.profile_info}>
             <h3>Emmanuel Juma</h3>
             <h4>Software Engineer</h4>
@@ -55,7 +56,9 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.left_section_3}>
-        <h1><hr /></h1>
+        <h1>
+          <hr />
+        </h1>
       </div>
     </>
   );
